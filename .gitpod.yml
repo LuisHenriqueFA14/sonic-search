@@ -1,5 +1,5 @@
 tasks:
   - init: |
-      echo 'TODO: build project'
+      docker pull valeriansaliou/sonic:v1.3.2
     command: |
-      echo 'TODO: start app'
+      docker run -p 1491:1491 -v $(pwd)/sonic/sonic.cfg:/etc/sonic.cfg -v $(pwd)/sonic/store/:/var/lib/sonic/store/ -d valeriansaliou/sonic:v1.3.2
